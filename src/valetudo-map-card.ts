@@ -1022,7 +1022,7 @@ class ValetudoMapCard extends HTMLElement {
           margin-left: auto;
           margin-right: auto;
           width: ${mapWidth * this._config.map_scale}px;
-          height: ${mapHeight * this._config.map_scale - this._config.crop.top * this._config.map_scale}px;
+          height: ${mapHeight * this._config.map_scale - this._config.crop.top}px;
           transform: rotate(${this._config.rotate});
           top: -${this._config.crop.top}px;
           left: -${this._config.crop.left}px;
