@@ -993,6 +993,7 @@ class ValetudoMapCard extends HTMLElement {
             width = (boundingBox.maxX - boundingBox.minX) + 2;
             height = (boundingBox.maxY - boundingBox.minY) + 2;
 
+            console.log(height, this._config.crop.bottom, this._config.crop.top)
             const mapWidth = width - this._config.crop.right;
             const mapHeight = height - this._config.crop.bottom - this._config.crop.top;
 
