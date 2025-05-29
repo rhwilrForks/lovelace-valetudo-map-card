@@ -995,7 +995,7 @@ class ValetudoMapCard extends HTMLElement {
 
             console.log(height, this._config.crop.bottom, this._config.crop.top)
             const mapWidth = width - this._config.crop.right;
-            const mapHeight = height - this._config.crop.bottom - this._config.crop.top;
+            const mapHeight = height - this._config.crop.bottom;
 
             // Calculate desired container height
             let containerHeight = (mapHeight * this._config.map_scale);
@@ -1022,7 +1022,7 @@ class ValetudoMapCard extends HTMLElement {
           margin-left: auto;
           margin-right: auto;
           width: ${mapWidth * this._config.map_scale}px;
-          height: ${mapHeight * this._config.map_scale}px;
+          height: ${mapHeight * this._config.map_scale - this._config.crop.top * this._config.map_scale}px;
           transform: rotate(${this._config.rotate});
           top: -${this._config.crop.top}px;
           left: -${this._config.crop.left}px;
