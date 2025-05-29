@@ -994,10 +994,10 @@ class ValetudoMapCard extends HTMLElement {
             height = (boundingBox.maxY - boundingBox.minY) + 2;
 
             const mapWidth = width - this._config.crop.right;
-            const mapHeight = height - this._config.crop.bottom;
+            const mapHeight = height - this._config.crop.bottom - this._config.crop.top;
 
             // Calculate desired container height
-            let containerHeight = (mapHeight * this._config.map_scale) - this._config.crop.top;
+            let containerHeight = (mapHeight * this._config.map_scale);
             let minHeight = Number(this._config.min_height);
 
             // Want height based on container width
