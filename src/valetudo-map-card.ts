@@ -993,9 +993,8 @@ class ValetudoMapCard extends HTMLElement {
             width = (boundingBox.maxX - boundingBox.minX) + 2;
             height = (boundingBox.maxY - boundingBox.minY) + 2;
 
-            console.log(height, this._config.crop.bottom, this._config.crop.top)
             const mapWidth = width - this._config.crop.right;
-            const mapHeight = height - this._config.crop.bottom;
+            const mapHeight = height - this._config.crop.top;
 
             // Calculate desired container height
             let containerHeight = (mapHeight * this._config.map_scale);
@@ -1022,9 +1021,9 @@ class ValetudoMapCard extends HTMLElement {
           margin-left: auto;
           margin-right: auto;
           width: ${mapWidth * this._config.map_scale}px;
-          height: ${mapHeight * this._config.map_scale - this._config.crop.top}px;
+          height: ${mapHeight * this._config.map_scale - this._config.crop.bottom}px;
           transform: rotate(${this._config.rotate});
-          top: -${this._config.crop.top}px;
+          top: -${this._config.crop.bottom}px;
           left: -${this._config.crop.left}px;
         }
         #lovelaceValetudoCard div {
